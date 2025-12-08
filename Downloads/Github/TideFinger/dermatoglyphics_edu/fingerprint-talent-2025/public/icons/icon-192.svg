@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#A855F7"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="38" fill="url(#grad)"/>
+  <circle cx="96" cy="85" r="35" fill="none" stroke="#fff" stroke-width="4"/>
+  <path d="M96 50 Q76 85 96 120 Q116 85 96 50" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="M70 70 Q96 95 122 70" fill="none" stroke="#FFD700" stroke-width="3"/>
+  <path d="M70 100 Q96 125 122 100" fill="none" stroke="#FFD700" stroke-width="3"/>
+  <text x="96" y="165" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="18" font-weight="bold">天赋指纹</text>
+</svg>

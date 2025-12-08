@@ -1,0 +1,255 @@
+/* ========================================
+   天赋指纹 - 全局样式
+   2025 Tech Stack: Nuxt 3 + Quasar + TresJS
+   ======================================== */
+
+/* 基础重置 */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML根元素 */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Body样式 */
+html, body {
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+  background: #0f0c29;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  min-height: 100dvh; /* iOS动态视口高度 */
+}
+
+/* iOS橡皮筋效果修复 */
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#__nuxt {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* iOS安全区适配 */
+.safe-area-top { padding-top: env(safe-area-inset-top); }
+.safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-area-left { padding-left: env(safe-area-inset-left); }
+.safe-area-right { padding-right: env(safe-area-inset-right); }
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.6);
+}
+
+/* 选择文本颜色 */
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+  color: #ffffff;
+}
+
+/* 禁用默认tap高亮 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 链接基础样式 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 图片响应式 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 输入框基础样式 */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 按钮重置 */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 列表重置 */
+ul, ol {
+  list-style: none;
+}
+
+/* 聚焦轮廓 */
+:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.6);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   动画工具类
+   ======================================== */
+
+/* 淡入动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 滑入动画 */
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* 缩放动画 */
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* ========================================
+   响应式工具
+   ======================================== */
+
+/* 移动端优先断点 */
+@media (max-width: 640px) {
+  html { font-size: 14px; }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html { font-size: 15px; }
+}
+
+@media (min-width: 1025px) {
+  html { font-size: 16px; }
+}
+
+/* 减少动画（无障碍） */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 深色模式适配（已默认深色） */
+@media (prefers-color-scheme: light) {
+  /* 保持深色主题不变 */
+}
+
+/* ========================================
+   Quasar覆盖
+   ======================================== */
+
+/* 按钮圆角增强 */
+.q-btn {
+  border-radius: 12px !important;
+}
+
+/* 卡片圆角增强 */
+.q-card {
+  border-radius: 16px !important;
+}
+
+/* 输入框圆角 */
+.q-field__control {
+  border-radius: 12px !important;
+}
+
+/* ========================================
+   3D Canvas优化
+   ======================================== */
+
+canvas {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* TresJS Canvas容器 */
+.tres-canvas-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ========================================
+   PWA安装提示
+   ======================================== */
+
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #8B5CF6, #A855F7);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+  z-index: 9999;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="ballGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.9"/>
+      <stop offset="50%" style="stop-color:#A855F7;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0.7"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="#0f0c29"/>
+
+  <circle cx="200" cy="200" r="150" fill="url(#ballGrad)" filter="url(#blur)" opacity="0.5"/>
+  <circle cx="200" cy="200" r="120" fill="url(#ballGrad)"/>
+  <ellipse cx="160" cy="160" rx="40" ry="30" fill="url(#glowGrad)"/>
+
+  <g stroke="#fff" stroke-width="1" fill="none" opacity="0.3">
+    <polygon points="200,80 280,160 260,260 140,260 120,160"/>
+    <polygon points="200,100 260,160 245,240 155,240 140,160"/>
+    <polygon points="200,120 240,160 230,220 170,220 160,160"/>
+  </g>
+
+  <g fill="#FFD700" opacity="0.8">
+    <circle cx="200" cy="80" r="4"/>
+    <circle cx="280" cy="160" r="4"/>
+    <circle cx="260" cy="260" r="4"/>
+    <circle cx="140" cy="260" r="4"/>
+    <circle cx="120" cy="160" r="4"/>
+  </g>
+
+  <text x="200" y="360" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="system-ui" font-size="12">
+    3D Loading...
+  </text>
+</svg>

@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Nuxt build outputs
+.nuxt/
+.output/
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test
+coverage/
+.nyc_output/
+test-results/
+
+# Cache
+.npm-cache/
+.eslintcache
+*.tsbuildinfo
+
+# PWA generated
+sw.js
+workbox-*.js
+tests/
+test-results/

@@ -1,0 +1,324 @@
+// ========================================
+// 天赋指纹 - 造神模式全局样式
+// 目标：让妈妈们觉得"这结果很贵"
+// ========================================
+
+// 品牌色变量
+$royal-purple: #6D28D9;
+$gold: #F59E0B;
+$pink: #EC4899;
+$dark: #0F172A;
+$darker: #020617;
+
+// 基础重置
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $dark;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+// iOS橡皮筋效果修复
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#__nuxt {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+// ========================================
+// 造神组件样式
+// ========================================
+
+// 极致毛玻璃 - "看起来很贵"
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(109, 40, 217, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(109, 40, 217, 0.3);
+  border-radius: 20px;
+}
+
+// 鎏金文字 - 朋友圈收割机
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #FDE68A 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+// 皇家紫渐变
+.bg-royal-gradient {
+  background: linear-gradient(135deg, $royal-purple 0%, darken($royal-purple, 15%) 100%);
+}
+
+.text-royal-gradient {
+  background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 50%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// SSR稀有度徽章
+.badge-ssr {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #F59E0B 100%);
+  background-size: 200% 200%;
+  animation: shimmer 2s ease-in-out infinite;
+  color: #0F172A;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+// ========================================
+// 扫描特效
+// ========================================
+
+.scan-container {
+  position: relative;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, $royal-purple, $pink, $gold);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderRotate 3s linear infinite;
+  }
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(168, 85, 247, 0.1) 45%,
+    rgba(168, 85, 247, 0.8) 50%,
+    rgba(168, 85, 247, 0.1) 55%,
+    transparent 100%
+  );
+  animation: scan 2.5s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+// ========================================
+// 呼吸光效
+// ========================================
+
+.breathing-glow {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(109, 40, 217, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(109, 40, 217, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+// ========================================
+// 粒子背景光斑
+// ========================================
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 12s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.blob-purple {
+  background: $royal-purple;
+  opacity: 0.4;
+}
+
+.blob-pink {
+  background: $pink;
+  opacity: 0.3;
+}
+
+.blob-gold {
+  background: $gold;
+  opacity: 0.2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(10px, -20px) scale(1.05); }
+  50% { transform: translate(20px, 10px) scale(0.95); }
+  75% { transform: translate(-10px, 20px) scale(1.02); }
+}
+
+// ========================================
+// 卡片悬停效果
+// ========================================
+
+.talent-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(109, 40, 217, 0.3);
+  }
+}
+
+// ========================================
+// 安全区适配
+// ========================================
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// ========================================
+// 滚动条隐藏
+// ========================================
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+// ========================================
+// 禁用选择和高亮
+// ========================================
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+// ========================================
+// 页面转场动画
+// ========================================
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+// ========================================
+// 全屏辅助类
+// ========================================
+
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fixed-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// ========================================
+// Quasar覆盖
+// ========================================
+
+.q-btn {
+  border-radius: 16px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+.q-card {
+  border-radius: 20px !important;
+  background: transparent !important;
+}
+
+.q-linear-progress {
+  border-radius: 10px !important;
+}

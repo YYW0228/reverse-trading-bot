@@ -1,0 +1,47 @@
+{
+  "name": "fingerprint-talent-2025",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:ci": "NUXT_TELEMETRY_DISABLED=1 nuxt dev --port 3000",
+    "test:e2e": "playwright test --config=tests/playwright.config.ts",
+    "test:e2e:ui": "playwright test --ui --config=tests/playwright.config.ts",
+    "preview:ci": "nuxt build && nuxt preview --port 3000",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.3",
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.1",
+    "@quasar/extras": "^1.16.9",
+    "@tresjs/cientos": "^4.0.2",
+    "@tresjs/core": "^4.2.6",
+    "@tresjs/nuxt": "^2.0.0",
+    "@vite-pwa/nuxt": "^0.4.0",
+    "@vueuse/motion": "^2.0.0",
+    "echarts": "^5.4.3",
+    "echarts-gl": "^2.0.9",
+    "gsap": "^3.12.2",
+    "html2canvas": "^1.4.1",
+    "nuxt": "^3.13.0",
+    "pinia": "^2.1.7",
+    "quasar": "^2.14.2",
+    "simplex-noise": "^4.0.1",
+    "three": "^0.160.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.5",
+    "vue3-lottie": "^3.2.0"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.17.3",
+    "@playwright/test": "^1.48.0",
+    "@types/three": "^0.160.0",
+    "sass-embedded": "^1.93.3",
+    "typescript": "^5.3.3"
+  }
+}
